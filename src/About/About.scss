@@ -1,0 +1,73 @@
+#aboutContainer {
+	padding-left: 55px;
+	margin-top: -25px;
+	height: 100vh;
+	background-color: #ccc;
+	color: rgba(255, 255, 255, 0.75);
+	background-attachment: fixed, fixed, fixed;
+	background-image: url(/overlay2.png), url(/overlay3.svg),
+		linear-gradient(45deg, #bebebe 5%, #a5a5a5 30%, #919191);
+	background-position: top left, center center, center center;
+	background-size: auto, cover, cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.aboutSection {
+	display: flex;
+	flex-direction: column;
+}
+
+.aboutHeader {
+	color: #fff;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 8vh;
+	font-weight: 700;
+}
+
+.aboutDescription {
+	width: 60vw;
+}
+
+.aboutImages {
+	padding-top: 25px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 60vw;
+	img {
+		object-fit: contain;
+		height: 75px;
+		width: 75px;
+	}
+}
+
+.vl {
+	width: 55px;
+	background: #fff;
+	border-radius: 1px;
+	height: 6px;
+	margin-right: 5px;
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-timing-function: ease-in;
+	animation-duration: 0.1s;
+}
+
+.fadeIn {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

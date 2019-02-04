@@ -1,0 +1,37 @@
+.contactContainer {
+	height: 25vh;
+	width: 100vw;
+	padding-top: 25px;
+	padding-left: 55px;
+	display: flex;
+	flex-direction: row;
+}
+
+.contactHeaderContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.contactHeader {
+	color: #fff;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 8vh;
+}
+
+.contactSubheader {
+	color: #fff;
+	font-size: 18px;
+}
+
+.contactLinks {
+	color: #fff;
+	font-size: 3vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: baseline;
+	padding-left: 45px;
+
+	div {
+		padding-top: 8px;
+	}
+}

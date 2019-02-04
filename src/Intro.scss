@@ -1,0 +1,87 @@
+body {
+	background: #032d62;
+}
+
+#introContainer {
+	height: 100vh;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.introText {
+	position: absolute;
+	color: #fff;
+	font-weight: 800;
+	font-size: 30vh;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+.introText::first-letter {
+	font-size: 33vh;
+}
+
+#jake {
+	top: 10vh;
+	color: #ccc;
+	z-index: 99;
+}
+
+#mager {
+	bottom: 10vh;
+}
+
+.magerUp {
+	animation-name: magerUp;
+	animation-duration: 2s;
+	bottom: 70vh !important;
+}
+
+.jakeUp {
+	animation-name: jakeUp;
+	animation-duration: 1.4s;
+	top: -10vh !important;
+}
+
+.navbarIntro {
+	animation-name: changeIntoNav;
+	animation-duration: 1.4s;
+	height: 24vh;
+	width: 100vw;
+	position: absolute;
+	top: 0;
+	background: #fff;
+	margin-left: 0;
+	z-index: 999;
+}
+
+@keyframes magerUp {
+	from {
+		bottom: 10vh;
+	}
+	to {
+		bottom: 70vh;
+	}
+}
+
+@keyframes jakeUp {
+	from {
+		top: 10vh;
+	}
+	to {
+		top: -10vh;
+	}
+}
+
+@keyframes changeIntoNav {
+	from {
+		width: 0;
+		margin-left: 50%;
+	}
+	to {
+		width: 100vw;
+		margin-left: 0;
+	}
+}

@@ -1,0 +1,64 @@
+.projectBanner {
+	height: 65px;
+	color: #0b325a;
+	width: 100vw;
+	color: #fff;
+	display: flex;
+	flex-direction: row;
+	border-bottom: 2px solid #fff;
+}
+
+.projectBannerHeader {
+	color: #fff;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 26px;
+	font-weight: 700;
+	padding-left: 55px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.projectBannerTitles {
+	height: 65px;
+	color: #fff;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 21px;
+	padding-left: 15px;
+	display: flex;
+	flex-direction: row;
+}
+
+.projectTitle {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 20px;
+}
+
+.projectTitle:hover {
+	text-decoration: line-through;
+	color: #ccc;
+	cursor: pointer;
+}
+
+.projectContainer {
+	padding-left: 55px;
+	height: 100vh;
+}
+
+.projectSection {
+	display: flex;
+	flex-direction: column;
+}
+
+.projectHeader {
+	color: #0b325a;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 8vh;
+	font-weight: 700;
+}
+
+.projectDescription {
+	width: 60vw;
+}

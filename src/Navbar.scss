@@ -1,0 +1,82 @@
+.navbar {
+	animation-name: navbarFinilization;
+	animation-duration: 1.4s;
+	height: 50px;
+	width: 100vw;
+	background: #fff;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+}
+
+.navbarInner {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	animation-name: navbarFadein;
+	animation-duration: 0.75s;
+	animation-delay: 1.4s;
+	animation-fill-mode: forwards;
+	opacity: 0;
+}
+
+.logo {
+	height: 100px;
+	object-fit: contain;
+	padding-left: 15px;
+	-webkit-transition: height 1s; /* Safari */
+	transition: height 1s;
+}
+
+.logoText {
+	margin: 0;
+	padding: 0;
+	color: #032d62;
+	font-weight: 700;
+	font-size: 15px;
+	padding-top: 12px;
+	padding-left: 15px;
+}
+
+.navLinks {
+	display: flex;
+	flex-direction: row;
+	font-size: 15px;
+	font-weight: 650;
+	margin-right: 25px;
+}
+
+.navLink {
+	padding: 0;
+	margin: 0;
+	padding-top: 12px;
+	padding-right: 6px;
+	padding-left: 6px;
+	text-decoration: none;
+	color: #aaa;
+	max-height: 38px;
+}
+
+.navLink:hover {
+	background: #ccc;
+	color: #032d62;
+	cursor: pointer;
+}
+
+@keyframes navbarFinilization {
+	from {
+		height: 24vh;
+	}
+	to {
+		height: 50px;
+	}
+}
+
+@keyframes navbarFadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
