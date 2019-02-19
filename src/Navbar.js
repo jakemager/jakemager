@@ -15,6 +15,10 @@ export default class Navbar extends Component {
 		window.addEventListener('scroll', this.runOnScroll);
 	}
 
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.runOnScroll);
+	}
+
 	runOnScroll = () => {
 		if (this.state.logoSize === 100 && window.pageYOffset > 0) {
 			this.setState({ logoSize: 50 });

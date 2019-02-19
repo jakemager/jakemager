@@ -12,14 +12,17 @@ export default class Intro extends Component {
 			magerMargin: -999,
 			magerHalfway: false,
 			jakeHalfway: false,
-			animationsComplete: false
+			animationsComplete: false,
+			comBottom: -15
 		};
 	}
 
 	componentDidMount() {
 		const introContainer = document.getElementById('introContainer');
-		introContainer.addEventListener('mousewheel', e => this.center(e), false);
+		introContainer.addEventListener('touchstart', e => this.center(e), false);
 		introContainer.addEventListener('DOMMouseScroll', e => this.center(e), false); // Firefox
+
+		setTimeout(() => setInterval(() => this.center(1), 18), 500);
 	}
 
 	componentWillUnmount() {
@@ -31,8 +34,9 @@ export default class Intro extends Component {
 	center = e => {
 		const { setIntroCompleted } = this.props;
 		const { position, magerHalfway } = this.state;
-		e.preventDefault();
-		if (e.deltaX !== 0 || e.deltaY < 0 || magerHalfway) return;
+		// e.preventDefault();
+		// if (e.deltaX !== 0 || e.deltaY < 0 || magerHalfway) return;
+		if (magerHalfway) return;
 
 		const jakeRect = document.getElementById('jake').getBoundingClientRect();
 		const magerRect = document.getElementById('mager').getBoundingClientRect();
@@ -69,7 +73,8 @@ export default class Intro extends Component {
 			magerMargin,
 			magerHalfway,
 			jakeHalfway,
-			animationsComplete
+			animationsComplete,
+			comBottom
 		} = this.state;
 
 		return (
@@ -89,6 +94,7 @@ export default class Intro extends Component {
 				>
 					MAGER
 				</div>
+				<div className={`com ${magerHalfway && 'comUp'}`}>.com</div>
 			</div>
 		);
 	}

@@ -17,13 +17,23 @@ export default class About extends Component {
 		const aboutContainer = document.getElementById('aboutContainer');
 		aboutContainer.addEventListener('mousewheel', e => this.center(e), false);
 		aboutContainer.addEventListener('DOMMouseScroll', e => this.center(e), false); // Firefox
+		window.addEventListener('scroll', this.runOnScroll);
 	}
 
 	componentWillUnmount() {
 		const aboutContainer = document.getElementById('aboutContainer');
 		aboutContainer.removeEventListener('mousewheel', e => this.center(e), false);
 		aboutContainer.removeEventListener('DOMMouseScroll', e => this.center(e), false); // Firefox
+		window.removeEventListener('scroll', this.runOnScroll);
 	}
+
+	runOnScroll = () => {
+		if (this.state.scrollY < 65 && window.pageYOffset > 0) {
+			this.setState({ scrollY: 65 });
+		} else if (this.state.scrollY > -25 && window.pageYOffset === 0) {
+			this.setState({ scrollY: 0 });
+		}
+	};
 
 	center = e => {
 		const { scrollY } = this.state;
@@ -39,8 +49,6 @@ export default class About extends Component {
 		let arrow = [];
 
 		const level = parseInt(scrollY / 5);
-
-		console.log(level, scrollY);
 
 		for (let i = 0; i < level && i < 9; i++) {
 			arrow.push(<div key={i} className="vl" />);
