@@ -15,29 +15,23 @@ export default class Intro extends Component {
 			animationsComplete: false,
 			comBottom: -15
 		};
+
+		this.animate = () => setInterval(() => this.center(1), 18);
 	}
 
 	componentDidMount() {
-		const introContainer = document.getElementById('introContainer');
-		introContainer.addEventListener('touchstart', e => this.center(e), false);
-		introContainer.addEventListener('DOMMouseScroll', e => this.center(e), false); // Firefox
-
-		setTimeout(() => setInterval(() => this.center(1), 18), 500);
+		setTimeout(this.animate, 750)
 	}
 
 	componentWillUnmount() {
-		const introContainer = document.getElementById('introContainer');
-		introContainer.removeEventListener('mousewheel', e => this.center(e), false);
-		introContainer.removeEventListener('DOMMouseScroll', e => this.center(e), false); // Firefox
+		clearInterval(this.animate)
 	}
 
-	center = e => {
+	center = () => {
 		const { setIntroCompleted } = this.props;
 		const { position, magerHalfway } = this.state;
-		// e.preventDefault();
-		// if (e.deltaX !== 0 || e.deltaY < 0 || magerHalfway) return;
+		
 		if (magerHalfway) return;
-
 		const jakeRect = document.getElementById('jake').getBoundingClientRect();
 		const magerRect = document.getElementById('mager').getBoundingClientRect();
 		const documentWidth = document.body.clientWidth;

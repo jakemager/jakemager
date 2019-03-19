@@ -41,7 +41,7 @@ export default class Navbar extends Component {
 						<p className="logoText">
 							<span style={{ fontSize: 20 }}>J</span>AKE<span style={{ fontSize: 20 }}>M</span>AGER
 							<span style={{ fontSize: 10 }}>
-								.com --- still under construction, last updated 02/03/2018
+								.com
 							</span>
 						</p>
 					</div>
