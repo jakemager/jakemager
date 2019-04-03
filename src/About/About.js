@@ -11,6 +11,33 @@ export default class About extends Component {
 		this.state = {
 			scrollY: 0
 		};
+
+		this.styles = {
+			duck: {
+				backgroundImage: 'url(/about/duck.jpg)',
+				backgroundSize: 'cover',
+				backgroundPosition: 'top left'
+			},
+			explorer: {
+				backgroundImage: 'url(/about/explorer.jpg)',
+				backgroundSize: 'cover',
+				backgroundPosition: 'bottom right'
+			},
+			fish: {
+				backgroundImage: 'url(/about/fish.jpg)',
+				backgroundSize: 'contain',
+				backgroundPosition: 'center'
+			},
+			fitness: {
+				backgroundImage: 'url(/about/fitness.jpg)',
+				backgroundSize: 'cover'
+			},
+			snowboard: {
+				backgroundImage: 'url(/about/snowboard.jpg)',
+				backgroundSize: 'cover',
+				backgroundPosition: 'bottom right'
+			}
+		};
 	}
 
 	componentDidMount() {
@@ -58,13 +85,21 @@ export default class About extends Component {
 		return arrow;
 	};
 
+	changeBackground = activity => {
+		if (!!!activity) this.setState({ style: {} });
+		else
+			this.setState({
+				style: this.styles[activity]
+			});
+	};
+
 	render() {
-		const { scrollY } = this.state;
+		const { scrollY, style } = this.state;
 
 		return (
-			<div id="aboutContainer">
+			<div id="aboutContainer" style={style}>
 				<div style={{ display: 'flex', flexDirection: 'row' }}>{this.renderScrollIndicators()}</div>
-				{scrollY < 30 ? <SoftwareAbout /> : <Activities />}
+				{scrollY < 30 ? <SoftwareAbout /> : <Activities changeBackground={this.changeBackground} />}
 			</div>
 		);
 	}

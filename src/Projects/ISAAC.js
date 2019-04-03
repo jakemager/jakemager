@@ -8,10 +8,7 @@ export default class sdh extends Component {
 					<span style={{ fontSize: '10vh' }}>I</span>SAAC
 				</div>
 				<div className="projectDescription">
-					Supreme Duck Hunting is an app to take waterfowl hunters to the next level of success.
-					Built with react native, supreme duck hunting allows user to track all of their hunts in
-					complete detail. This enables the user to use this data to know where to hunt when
-					depending on weather condtions and their past hunts.
+					<a href="https://www.smart-monkeys.com/isaac-landing">Developed at Smart Monkeys</a>
 				</div>
 			</div>
 		);

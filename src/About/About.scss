@@ -9,9 +9,11 @@
 		linear-gradient(45deg, #b5b5b5 5%, #a5a5a5 30%, #919191);
 	background-position: top left, center center, center center;
 	background-size: auto, cover, cover;
+	background-repeat: no-repeat;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	transition: background-position 0.7s ease-in-out;
 }
 
 .aboutSection {
@@ -24,6 +26,17 @@
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	font-size: 8vh;
 	font-weight: 700;
+	display: flex;
+
+	p {
+		padding: 0;
+		margin: 0;
+
+		&:hover {
+			cursor: default;
+			color: #022d63;
+		}
+	}
 }
 
 .aboutDescription {
